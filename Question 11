@@ -1,0 +1,29 @@
+<?php
+
+// Array of correct answers
+$correctAnswers = array('Q1' => 'A', 'Q2' => 'B', 'Q3' => 'C', 'Q4' => 'D', 'Q5' => 'A');
+
+// Array of user's selected answers (replace with actual user input)
+$userAnswers = array('Q1' => 'A', 'Q2' => 'B', 'Q3' => 'C', 'Q4' => 'D', 'Q5' => 'B');
+
+// Function to calculate user's score
+function calculateScore($correctAnswers, $userAnswers) {
+    $score = 0;
+
+    foreach ($correctAnswers as $question => $correctAnswer) {
+        // Check if user's answer matches the correct answer
+        if (isset($userAnswers[$question]) && $userAnswers[$question] === $correctAnswer) {
+            $score++;
+        }
+    }
+
+    return $score;
+}
+
+// Calculate user's score
+$userScore = calculateScore($correctAnswers, $userAnswers);
+
+// Display the user's score
+echo "Your Score: $userScore out of " . count($correctAnswers);
+
+?>

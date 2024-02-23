@@ -1,0 +1,33 @@
+class ShoppingCart:
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, item_name, item_price):
+        self.items.append({"name": item_name, "price": item_price})
+
+    def calculate_total(self):
+        total_price = sum(item["price"] for item in self.items)
+        return total_price
+
+    def apply_discount(self, total_price):
+        if total_price > 5000:
+            discounted_price = total_price * 0.9  # 10% discount
+            return discounted_price
+        else:
+            return total_price
+
+    def checkout(self):
+        total_price = self.calculate_total()
+        final_price = self.apply_discount(total_price)
+
+        print(f"Original Price: Rs. {total_price}")
+        print(f"Final Price after Discount: Rs. {final_price}")
+
+
+# Example usage:
+cart = ShoppingCart()
+cart.add_item("Item 1", 3000)
+cart.add_item("Item 2", 2500)
+cart.add_item("Item 3", 1000)
+
+cart.checkout()

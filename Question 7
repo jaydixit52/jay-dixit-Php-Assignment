@@ -1,0 +1,16 @@
+<?php
+
+function provide_recommendation($temperature) {
+    if ($temperature > 25) {
+        echo "It's a sunny day!";
+    } else {
+        echo "Consider taking an umbrella";
+    }
+}
+
+// Example usage:
+$current_temperature = 28;
+echo "Current temperature: $current_temperature°C\n";
+provide_recommendation($current_temperature);
+
+?>

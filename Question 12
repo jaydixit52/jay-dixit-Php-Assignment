@@ -1,0 +1,30 @@
+<?php
+
+// Simulating user data (replace this with your actual user data)
+$userData = array(
+    'userId' => 123,
+    'subscribed' => false,
+);
+
+// Function to check if the user is a new user and offer a trial period
+function offerTrialPeriod($userData) {
+    // Check if the user is already subscribed
+    if ($userData['subscribed']) {
+        echo "Welcome back! You are already subscribed.";
+    } else {
+        // Check if the user is a new user (for demonstration, checking a specific condition)
+        // In a real-world scenario, you may want to use more robust methods to determine if a user is new.
+        if (!isset($_SESSION['visited']) || $_SESSION['visited'] !== true) {
+            echo "Welcome! You are a new user. Enjoy your free trial period!";
+            // Set a session variable to track if the user has visited before
+            $_SESSION['visited'] = true;
+        } else {
+            echo "Welcome back! You are eligible for a subscription.";
+        }
+    }
+}
+
+// Example usage
+offerTrialPeriod($userData);
+
+?>

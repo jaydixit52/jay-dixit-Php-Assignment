@@ -1,0 +1,18 @@
+<?php
+
+// Hardcoded example credentials (replace these with your actual stored credentials)
+$stored_username = 'user123';
+$stored_password = 'password123';
+
+// User-submitted credentials (you would typically get these from a form submission)
+$user_submitted_username = $_POST['username']; // Assuming the form uses POST method
+$user_submitted_password = $_POST['password']; // Assuming the form uses POST method
+
+// Check if provided credentials match stored credentials
+if ($user_submitted_username === $stored_username && $user_submitted_password === $stored_password) {
+    echo "Login successful";
+} else {
+    echo "Invalid credentials";
+}
+
+?>

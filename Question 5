@@ -1,0 +1,19 @@
+<?php
+
+function apply_discount($total_order_amount) {
+    if ($total_order_amount > 1000) {
+        $discounted_amount = $total_order_amount * 0.9;  // 10% discount
+        return "Congratulations! You qualify for a discount. Your discounted total is Rs. $discounted_amount";
+    } else {
+        return "No discount applied. Your total order amount is Rs. $total_order_amount";
+    }
+}
+
+// Example usage:
+$order_amount = 1200;
+$message = apply_discount($order_amount);
+
+echo "Total order amount: Rs. $order_amount\n";
+echo $message;
+
+?>

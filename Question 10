@@ -1,0 +1,28 @@
+<?php
+
+// Function to limit the length of the article title
+function limitTitleLength($title, $limit = 50) {
+    // Trim the title to the specified limit
+    $truncatedTitle = substr($title, 0, $limit);
+
+    // Check if the title was actually truncated
+    if (strlen($title) > $limit) {
+        // If truncated, add ellipsis (...) to indicate it
+        $truncatedTitle .= '...';
+    }
+
+    // Return the truncated title
+    return $truncatedTitle;
+}
+
+// Example usage
+$articleTitle = "This is a very long article title that exceeds the 50 characters limit.";
+
+// Call the function to limit the title length
+$limitedTitle = limitTitleLength($articleTitle);
+
+// Output the original and limited title
+echo "Original Title: $articleTitle<br>";
+echo "Limited Title: $limitedTitle";
+
+?>

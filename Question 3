@@ -1,0 +1,22 @@
+<?php
+
+function determine_fitness_level($steps) {
+    if ($steps < 5000) {
+        return 'Beginner';
+    } elseif ($steps >= 5000 && $steps <= 10000) {
+        return 'Intermediate';
+    } elseif ($steps > 10000) {
+        return 'Advanced';
+    } else {
+        return 'Invalid input';
+    }
+}
+
+// Example usage:
+$steps_walked = 8000;
+$fitness_level = determine_fitness_level($steps_walked);
+
+echo "Number of steps walked: $steps_walked\n";
+echo "Fitness Level: $fitness_level\n";
+
+?>
